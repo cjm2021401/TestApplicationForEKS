@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: show-hostname-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: show-hostname
+  template:
+    metadata:
+      labels:
+        app: show-hostname
+    spec:
+      containers:
+        - name: show-hostname
+          image: 858869084011.dkr.ecr.ap-northeast-2.amazonaws.com/show_hostname:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
