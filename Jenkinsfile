@@ -15,8 +15,8 @@ node {
     }
 
     stage('Deploy'){
-        sh "$(which kubectl) config use-context arn:aws:eks:ap-northeast-2:858869084011:cluster/eks-cluster"
-        sh "$(which kubectl) rollout restart deploy show-hostname-deployment"
+        sh "/usr/local/bin/kubectl config use-context arn:aws:eks:ap-northeast-2:858869084011:cluster/eks-cluster"
+        sh "/usr/local/bin/kubectl rollout restart deploy show-hostname-deployment"
     }
     stage('Delete'){
         sh 'docker image prune -f'
