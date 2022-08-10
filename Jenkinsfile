@@ -19,7 +19,7 @@ node {
         sh "/var/lib/jenkins/bin/kubectl rollout restart deploy show-hostname-deployment"
     }
     stage('Delete'){
-        sh 'docker image prune -f'
+        sh 'docker rmi 858869084011.dkr.ecr.ap-northeast-2.amazonaws.com/show_hostname:latest'
     }
     stage('Clean'){
             cleanWs()
