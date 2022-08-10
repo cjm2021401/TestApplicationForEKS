@@ -19,7 +19,7 @@ dependencies {
 }
 
 tasks.named('test') {
-	exclude '**/*'
+	useJUnitPlatform()
 }
 
 bootJar {

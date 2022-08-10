@@ -6,6 +6,8 @@ COPY build.gradle .
 COPY settings.gradle .
 COPY src src
 
+RUN ./gradlew build
+
 FROM openjdk:11-jre-slim
 COPY --from=builder build/libs/application.jar application.jar
 EXPOSE 8080
