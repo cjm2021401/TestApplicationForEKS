@@ -10,7 +10,7 @@ node {
     stage('Upload') {
         sh 'aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 858869084011.dkr.ecr.ap-northeast-2.amazonaws.com'
         sh 'docker tag showhost:latest 858869084011.dkr.ecr.ap-northeast-2.amazonaws.com/show_hostname:latest'
-        sh 'docker push 592247757306.dkr.ecr.ap-northeast-2.amazonaws.com/license:latest'
+        sh 'docker push 858869084011.dkr.ecr.ap-northeast-2.amazonaws.com/show_hostname:latest'
 
     }
 
